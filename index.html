@@ -1,0 +1,19 @@
+<form id="contact-form">
+  <input type="text" name="name" placeholder="お名前" required>
+  <input type="email" name="email" placeholder="メールアドレス" required>
+  <textarea name="message" placeholder="お問い合わせ内容" required></textarea>
+  <button type="submit">送信</button>
+</form>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  fetch('https://script.google.com/macros/s/AKfycbwhISZh1X0iFdp5l0DUKZ-UCHBtEjdWbysuAGeL-EwyhmenVmOfRmQqkpvfXTUJxXJhFg/exec', {
+    method: 'POST',
+    body: formData
+  }).then(response => response.text())
+    .then(result => alert('送信完了しました！'))
+    .catch(error => alert('エラーが発生しました'));
+});
+</script>
