@@ -9,7 +9,7 @@
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const formData = new FormData(this);
-  fetch('https://script.google.com/macros/s/AKfycbxj06L3VaklLnKt1V5B7YJMdUwjqyj4IUf57TeNSHS2bOhAG1JrZI2Fek934h5qzUm91w/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbyqxS7HkS_7zRUbpXMp_MKiVXkZbi1z9Pgyy16WZ4dP2oEV889UiMfAaZaCQda7FTYIuw/exec', {
     method: 'POST',
     body: formData
   }).then(response => response.text())
